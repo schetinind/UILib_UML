@@ -1,0 +1,30 @@
+@startuml
+interface UIControl{
+    FIELDS:    
+       ..
+    - <b>_SELF_</b> : this
+    - <b>_CLASS_</b> : <i>String</i>
+    - <b>_HTML_TEMPLATE_</b> : <i>String</i>
+    --
+    METHODS:
+    ..
+    + <i>UIControl</i> : <b>getSelf()</b>
+    + <i>String</i> : <b>getClass()</b>
+    + <i>void</i> : <b>setData()</b>
+    + <i>String</i> : <b>getHTMLTemplate()</b>
+}
+class UIButton{
+    FIELDS:
+    ..
+    - <b>_SELF_</b> : this
+    - <b>_CLASS_</b> : <i>'UIButton'</i>
+    - <b>_HTML_TEMPLATE_</b> : <i>String</i>
+    --
+    METHODS:
+    ..
+    + <i>UIButton</i> : <b>getSelf()</b>
+    + <i>String</i> : <b>getClass()</b>
+    + <i>void</i> : <b>setData({</b><b>caption:</b><i>String</i>,<b>color:</b><i>UICSSColor</i><b>})</b>
+    + <i>String</i> : <b>getHTMLTemplate()</b>
+}
+@enduml
