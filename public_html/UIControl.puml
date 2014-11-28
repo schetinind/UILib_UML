@@ -1,30 +1,56 @@
 @startuml
 interface UIControl{
+    CONSTRUCTOR : <b>function({</b><b>id:</b><i>String</i><b>})</b>
+    --
     FIELDS:    
        ..
     - <b>_SELF_</b> : this
     - <b>_CLASS_</b> : <i>String</i>
-    - <b>_HTML_TEMPLATE_</b> : <i>String</i>
+    - <b>_ID_</b> : <i>'UIButton'</i> 
+    + <b>htmlTemplate</b> : <i>String</i>
+    + <b>elements</b> : <i>Array</i>
+    + <b>wrapper</b> : <i>HTMLElement</i>
+    
     --
-    METHODS:
+    PROTOTYPE METHODS:
     ..
     + <i>UIControl</i> : <b>getSelf()</b>
     + <i>String</i> : <b>getClass()</b>
-    + <i>void</i> : <b>setData()</b>
     + <i>String</i> : <b>getHTMLTemplate()</b>
+    + <i>String</i> : <b>setHTMLTemplate(</b><i>String</i><b>)</b>
+    + <i>void</i> : <b>setData(</b><i>Object</i><b>)</b>
+    + <i>void</i> : <b>setEvent({</b><b>element:</b><i>HTMLElement</i>,<b>event:</b><i>String</i>,<b>function:</b><i>Function</i><b>})</b>
+
 }
 class UIButton{
     FIELDS:
     ..
-    - <b>_SELF_</b> : this
     - <b>_CLASS_</b> : <i>'UIButton'</i>
-    - <b>_HTML_TEMPLATE_</b> : <i>String</i>
+    + <b>caption</b> : <i>String</i>
+    + <b>color</b> : <i>UICSSColor</i>
     --
-    METHODS:
+    PROTOTYPE METHODS:
     ..
-    + <i>UIButton</i> : <b>getSelf()</b>
-    + <i>String</i> : <b>getClass()</b>
     + <i>void</i> : <b>setData({</b><b>caption:</b><i>String</i>,<b>color:</b><i>UICSSColor</i><b>})</b>
-    + <i>String</i> : <b>getHTMLTemplate()</b>
 }
+class UIImageButton{
+    FIELDS:
+    ..
+    - <b>_CLASS_</b> : <i>'UIImageButton'</i>
+    + <b>image</b> : <i>String</i>
+    + <b>caption</b> : <i>String</i>
+    --
+    PROTOTYPE METHODS:
+    ..
+    + <i>void</i> : <b>setData({</b><b>caption:</b><i>String</i>,<b>color:</b><i>UICSSColor</i>,<b>image:</b><i>String</i><b>})</b>
+
+}
+class UIHScroll{
+
+}
+
+UIControl <|-- UIButton
+UIControl <|-- UIImageButton
+UIControl <|-- UIHScroll
+UIControl <|-- UITable
 @enduml
